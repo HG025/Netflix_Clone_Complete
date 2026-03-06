@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { inject, NgModule, provideAppInitializer } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { HomeComponent } from './user/home/home.component';
 import { authInterceptor } from './shared/interceptor/auth.interceptor';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AuthService } from './shared/auth.service';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,9 @@ import { authInterceptor } from './shared/interceptor/auth.interceptor';
     SignupComponent,
     LoginComponent,
     VerifyEmailComponent,
-    HomeComponent
+    HomeComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +31,10 @@ import { authInterceptor } from './shared/interceptor/auth.interceptor';
     SharedModule
   ],
   providers: [
+    provideAppInitializer(() => {
+      const auth = inject(AuthService);
+      return auth.initilizeAuth();
+    }),
     provideHttpClient(withInterceptors([authInterceptor])),
   ],
   bootstrap: [AppComponent]
