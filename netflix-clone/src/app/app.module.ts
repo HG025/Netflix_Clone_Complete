@@ -6,16 +6,19 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { SharedModule } from './shared/shared.module';
 import { SignupComponent } from './signup/signup.component';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { HomeComponent } from './user/home/home.component';
+import { authInterceptor } from './shared/interceptor/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     SignupComponent,
     LoginComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     SharedModule
   ],
   providers: [
-    provideHttpClient()
+    provideHttpClient(withInterceptors([authInterceptor])),
   ],
   bootstrap: [AppComponent]
 })
