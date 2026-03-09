@@ -58,9 +58,6 @@ const MATERIAL_MODULES = [
 
 @NgModule({
   declarations: [
-    ConfirmDialogComponent,
-    HeaderComponent,
-    ChangePasswordDialogComponent
   ],
   imports: [
     CommonModule,
@@ -71,9 +68,6 @@ const MATERIAL_MODULES = [
     A11yModule
 ],
   exports: [
-    ConfirmDialogComponent,
-    HeaderComponent,
-    ChangePasswordDialogComponent,
     CommonModule,
     RouterModule,
     FormsModule,

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
 import { NotificationService } from '../shared/services/notification.service';
 import { ErrorhandlerService } from '../shared/services/errorhandler.service';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',

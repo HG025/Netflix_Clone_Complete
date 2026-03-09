@@ -19,10 +19,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     AppComponent,
     LandingComponent,
     SignupComponent,
-    LoginComponent,
     VerifyEmailComponent,
     HomeComponent,
-    ForgotPasswordComponent,
     ResetPasswordComponent
   ],
   imports: [
