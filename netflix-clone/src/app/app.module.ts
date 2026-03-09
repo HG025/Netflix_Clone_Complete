@@ -12,7 +12,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { HomeComponent } from './user/home/home.component';
 import { authInterceptor } from './shared/interceptor/auth.interceptor';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { AuthService } from './shared/auth.service';
+import { AuthService } from './shared/services/auth.service';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 @NgModule({
   declarations: [

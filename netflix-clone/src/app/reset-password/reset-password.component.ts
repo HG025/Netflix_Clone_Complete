@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '../shared/auth.service';
-import { NotificationService } from '../shared/notification.service';
+import { AuthService } from '../shared/services/auth.service';
+import { NotificationService } from '../shared/services/notification.service';
 
 @Component({
   selector: 'app-reset-password',

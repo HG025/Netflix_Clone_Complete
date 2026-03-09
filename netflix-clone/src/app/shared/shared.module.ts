@@ -25,6 +25,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ChangePasswordDialogComponent } from './components/change-password-dialog/change-password-dialog.component';
+import { A11yModule } from '@angular/cdk/a11y';
 
 
 const MATERIAL_MODULES = [
@@ -53,15 +57,23 @@ const MATERIAL_MODULES = [
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ConfirmDialogComponent,
+    HeaderComponent,
+    ChangePasswordDialogComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    ...MATERIAL_MODULES
-  ],
+    ...MATERIAL_MODULES,
+    A11yModule
+],
   exports: [
+    ConfirmDialogComponent,
+    HeaderComponent,
+    ChangePasswordDialogComponent,
     CommonModule,
     RouterModule,
     FormsModule,
