@@ -7,13 +7,16 @@ import { LandingComponent } from './landing/landing.component';
 import { SharedModule } from './shared/shared.module';
 import { SignupComponent } from './signup/signup.component';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
-import { VerifyEmailComponent } from './verify-email/verify-email.component';
-import { HomeComponent } from './user/home/home.component';
-import { authInterceptor } from './shared/interceptor/auth.interceptor';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { AuthService } from './shared/services/auth.service';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { authInterceptor } from './shared/interceptor/auth.interceptor';
+import { AuthService } from './shared/services/auth.service';
+import { HomeComponent } from './user/home/home.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ConfirmDialogComponent } from './shared/components/confirm-dialog/confirm-dialog.component';
+import { ChangePasswordDialogComponent } from './shared/components/change-password-dialog/change-password-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,12 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     SignupComponent,
     VerifyEmailComponent,
     HomeComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    LoginComponent,
+    HeaderComponent,
+    ForgotPasswordComponent,
+    ConfirmDialogComponent,
+    ChangePasswordDialogComponent
   ],
   imports: [
     BrowserModule,

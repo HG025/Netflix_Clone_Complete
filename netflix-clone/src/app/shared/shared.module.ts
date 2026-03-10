@@ -65,14 +65,13 @@ const MATERIAL_MODULES = [
     FormsModule,
     ReactiveFormsModule,
     ...MATERIAL_MODULES,
-    A11yModule
 ],
   exports: [
     CommonModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    ...MATERIAL_MODULES
+    ...MATERIAL_MODULES,
   ]
 })
 export class SharedModule { }

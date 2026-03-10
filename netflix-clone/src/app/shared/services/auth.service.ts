@@ -89,9 +89,9 @@ export class AuthService {
   }
 
   // if a user close the browser or hard restart if it still has token then it will make it gives the data information of user 
-  // initilizeAuth(): Promise<void> {
+  //  initilizeAuth(): Promise<void>{
   //   return new Promise((resolve) => {
-  //     if(this.isLoggedIn()){
+  //     if(!this.isLoggedIn()){
   //       this.handleAuthSuccess(null);
   //       resolve();
   //       return;
@@ -107,8 +107,9 @@ export class AuthService {
   //       }
   //     })
   //   })
-  // }
-  initilizeAuth(): Promise<void> {
+  //  }
+
+     initilizeAuth(): Promise<void> {
   return new Promise((resolve) => {
     if(this.isLoggedIn()){
       this.fetchCurrentUser().subscribe({
@@ -128,10 +129,13 @@ export class AuthService {
     return this.http.get(this.apiUrl + '/current-user')
   }
  
-  
   logout(){
     localStorage.removeItem('token');
     this.currentUserSubject.next(null);
     this.router.navigate(['/']);
+  }
+
+  changePassword(changePasswordData: any){
+    return this.http.post(this.apiUrl + '/change-password', changePasswordData);
   }
 }
