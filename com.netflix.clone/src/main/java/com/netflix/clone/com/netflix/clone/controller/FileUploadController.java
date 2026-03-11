@@ -3,10 +3,10 @@ package com.netflix.clone.com.netflix.clone.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,19 +21,20 @@ import com.netflix.clone.com.netflix.clone.service.FileUploadService;
 
 @RestController
 @RequestMapping("/api/files")
+@CrossOrigin(origins = "http://localhost:4200") // allow Angular
 public class FileUploadController {
 
     @Autowired
     private FileUploadService fileUploadService;
 
     @PostMapping("/upload/video")
-    public ResponseEntity<Map<String, String>> uploadVideo(@RequestParam("file")MultipartFile file){
+    public ResponseEntity<Map<String, String>> uploadVideo(@RequestParam("file") MultipartFile file){
         String uuid = fileUploadService.storeVideoFile(file);
         return ResponseEntity.ok(buildUploadResponse(uuid, file));
     }
 
     @PostMapping("/upload/image")
-    public ResponseEntity<Map<String, String>> imageUpload(@RequestParam("file")MultipartFile file){
+    public ResponseEntity<Map<String, String>> imageUpload(@RequestParam("file") MultipartFile file){
         String uuid = fileUploadService.storeImageFile(file);
         return ResponseEntity.ok(buildUploadResponse(uuid, file));
     }
