@@ -29,6 +29,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { HeaderComponent } from './components/header/header.component';
 import { ChangePasswordDialogComponent } from './components/change-password-dialog/change-password-dialog.component';
 import { A11yModule } from '@angular/cdk/a11y';
+import { VideoPlayerComponent } from './components/video-player/video-player.component';
 
 
 const MATERIAL_MODULES = [
@@ -58,6 +59,8 @@ const MATERIAL_MODULES = [
 
 @NgModule({
   declarations: [
+  
+    VideoPlayerComponent
   ],
   imports: [
     CommonModule,

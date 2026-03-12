@@ -166,6 +166,7 @@ export class ManageVideoComponent implements OnInit {
     videoElement.preload = 'metadata';
 
     const blobUrl = URL.createObjectURL(file);
+    videoElement.src = blobUrl;
     videoElement.onloadedmetadata = () => {
       const duration = isFinite(videoElement.duration) ? Math.round(videoElement.duration) : 0;
       this.videoForm.patchValue({ duration: duration });

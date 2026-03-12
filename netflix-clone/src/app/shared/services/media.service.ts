@@ -42,7 +42,7 @@ export class MediaService {
     )
   }
 
-  getMediaUrl(mediaValue: any, type: 'image' | 'video', options?: { userCache?: boolean; }): string | null {
+  getMediaUrl(mediaValue: any, type: 'image' | 'video', options?: { useCache?: boolean; }): string | null {
     let value = mediaValue;
     if (type === 'image' && mediaValue && typeof mediaValue === 'object' && mediaValue.poster) {
       value = mediaValue.poster;
@@ -53,11 +53,11 @@ export class MediaService {
     }
 
     let uuid = value;
-    if (value.includes(`/${type}`)) {
+    if (value.includes(`/${type}/`)) {
       uuid = value.substring(value.lastIndexOf('/') + 1);
     }
 
-    if (options?.userCache && type === 'image' && this.imageCache.has(uuid)) {
+    if (options?.useCache && type === 'image' && this.imageCache.has(uuid)) {
       return this.imageCache.get(uuid)!;
     }
 
@@ -71,9 +71,9 @@ export class MediaService {
       return null;
     }
 
-    const authenticateUrl = `${this.apiUrl}/${type}/${uuid}?=token=${encodeURIComponent(token)}`;
+    const authenticateUrl = `${this.apiUrl}/${type}/${uuid}?token=${encodeURIComponent(token)}`;
 
-    if (options?.userCache && type === 'image') {
+    if (options?.useCache && type === 'image') {
       this.imageCache.set(uuid, authenticateUrl)
     }
 

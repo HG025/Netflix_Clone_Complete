@@ -5,6 +5,7 @@ import { DIALOG_CONFIG } from '../contants/app.constants';
 import { Observable } from 'rxjs';
 import { ConfirmDialogComponent } from '../components/confirm-dialog/confirm-dialog.component';
 import { ManageVideoComponent } from '../../admin/dialog/manage-video/manage-video.component';
+import { VideoPlayerComponent } from '../components/video-player/video-player.component';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,13 @@ export class DialogServiceService {
     return this.dialog.open(ManageVideoComponent, {
       ...DIALOG_CONFIG.VIDEO_FORM,
       data: { mode, video }
+    });
+  }
+
+  openVideoPlayer(video:any):MatDialogRef<VideoPlayerComponent>{
+    return this.dialog.open(VideoPlayerComponent, {
+      data: video,
+      ...DIALOG_CONFIG.VIDEO_PLAYER,
     });
   }
 }

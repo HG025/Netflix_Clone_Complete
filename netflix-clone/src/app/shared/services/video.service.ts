@@ -21,7 +21,7 @@ export class VideoService {
     if (search) {
       params = params.set('search', search);
     }
-    return this.http.post(this.apiUrlAdmin, { params });
+    return this.http.get(this.apiUrlAdmin, { params });
   }
 
   createVideoByAdmin(data: any) {
@@ -53,7 +53,7 @@ export class VideoService {
     if (search) {
       params = params.set('search', search);
     }
-    return this.http.post(this.apiUrl+'/published', { params });
+    return this.http.get(this.apiUrl+'/published', { params });
   }
 
   getFeaturedVideos() {
