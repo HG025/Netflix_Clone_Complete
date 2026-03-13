@@ -9,6 +9,7 @@ import { authGuard } from './shared/guards/auth.guard';
 import { adminGuard } from './shared/guards/admin.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UserListComponent } from './admin/user-list/user-list.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },

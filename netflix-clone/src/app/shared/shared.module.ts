@@ -53,7 +53,7 @@ const MATERIAL_MODULES = [
   MatSlideToggleModule,
   MatSliderModule,
   MatToolbarModule,
-  MatExpansionModule
+  MatExpansionModule,
 ];
 
 
