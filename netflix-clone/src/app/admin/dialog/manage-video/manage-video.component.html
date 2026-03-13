@@ -111,7 +111,7 @@
                         <mat-form-field appearance="outline" class="full-width">
                             <mat-label>Rating</mat-label>
                             <mat-select formControlName="rating" required>
-                                <mat-option *ngFor="let r of ratings" [value]="r">{{r}}</mat-option>
+                                <mat-option *ngFor="let r of rating" [value]="r">{{r}}</mat-option>
                             </mat-select>
                             <mat-icon matPrefix>star</mat-icon>
                             <mat-error *ngIf="videoForm.get('rating')?.hasError('required')">Rating is

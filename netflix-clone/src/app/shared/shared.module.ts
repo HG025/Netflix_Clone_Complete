@@ -28,7 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ChangePasswordDialogComponent } from './components/change-password-dialog/change-password-dialog.component';
-import { A11yModule } from '@angular/cdk/a11y';
+import { A11yModule, CdkAriaLive } from '@angular/cdk/a11y';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
 
 

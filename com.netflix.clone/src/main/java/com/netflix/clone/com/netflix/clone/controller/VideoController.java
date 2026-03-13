@@ -91,6 +91,7 @@ public class VideoController {
         List<VideoResponse> response = videoService.getFeaturedVideos();
         return ResponseEntity.ok(response);
     }
+    
 
 
 

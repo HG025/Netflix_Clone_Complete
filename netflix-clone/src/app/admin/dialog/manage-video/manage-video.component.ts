@@ -19,7 +19,7 @@ export class ManageVideoComponent implements OnInit {
   uploadProgress = 0;
   posterProgress = 0;
   categoriesAll = VIDEO_CATEGORIES;
-  ratings = RATINGS;
+  rating = RATINGS;
   videoForm: any;
 
   videoPreviewUrl: string | null = null;
@@ -230,7 +230,7 @@ export class ManageVideoComponent implements OnInit {
         title: video.title,
         description: video.description,
         year: video.year,
-        ratings: video.rating,
+        rating: video.rating,
         categories: video.categories || [],
         duration: video.duration,
         src: this.extractUuidFromUrl(video.src),
