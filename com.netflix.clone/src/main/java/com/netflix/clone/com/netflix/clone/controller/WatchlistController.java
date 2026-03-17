@@ -1,9 +1,9 @@
 package com.netflix.clone.com.netflix.clone.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.netflix.clone.com.netflix.clone.dto.response.MessageResponse;
 import com.netflix.clone.com.netflix.clone.dto.response.PageResponse;
 import com.netflix.clone.com.netflix.clone.dto.response.VideoResponse;
-import com.netflix.clone.com.netflix.clone.entity.Video;
 import com.netflix.clone.com.netflix.clone.service.WatchlistService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/watchlist")
 public class WatchlistController {
 

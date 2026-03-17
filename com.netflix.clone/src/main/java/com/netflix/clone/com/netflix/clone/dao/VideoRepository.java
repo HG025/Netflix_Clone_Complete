@@ -30,7 +30,7 @@ public interface VideoRepository extends JpaRepository<Video, Long>{
         + "LOWER(v.title) LIKE LOWER(CONCAT('%', :search, '%')) OR "
         + "LOWER(v.description) LIKE LOWER(CONCAT('%', :search, '%'))) "
         + "ORDER BY v.createdAt DESC")
-    Page<Video> SearchPublichedVideos(String search, Pageable pageable);
+    Page<Video> SearchPublichedVideos(@Param("search") String search, Pageable pageable);
 
     @Query("SELECT v FROM Video v WHERE v.published = true ORDER BY v.createdAt DESC")
     Page<Video> findPublishedVideos(Pageable pageable);
