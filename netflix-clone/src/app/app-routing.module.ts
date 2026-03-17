@@ -9,19 +9,20 @@ import { authGuard } from './shared/guards/auth.guard';
 import { adminGuard } from './shared/guards/admin.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { UserListComponent } from './admin/user-list/user-list.component';
+import { MyFavoritesComponent } from './user/my-favorites/my-favorites.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'verify-email', component: VerifyEmailComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent},
-  { path: 'reset-password', component: ResetPasswordComponent},
-  { path: 'home', component: HomeComponent, canActivate: [authGuard]},
-  { 
-    path: 'admin', 
-    loadChildren: () => import('../app/admin/admin.module').then(m => m.AdminModule), 
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'home', component: HomeComponent, canActivate: [authGuard] },
+  { path: 'my-favorites', component: MyFavoritesComponent, canActivate: [authGuard] },
+  {
+    path: 'admin',
+    loadChildren: () => import('../app/admin/admin.module').then(m => m.AdminModule),
     canActivate: [adminGuard]
   }, //lazy loading admin module 
   { path: '**', redirectTo: '', pathMatch: 'full' }

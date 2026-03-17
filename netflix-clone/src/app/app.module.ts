@@ -17,6 +17,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ConfirmDialogComponent } from './shared/components/confirm-dialog/confirm-dialog.component';
 import { ChangePasswordDialogComponent } from './shared/components/change-password-dialog/change-password-dialog.component';
+import { MyFavoritesComponent } from './user/my-favorites/my-favorites.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { ChangePasswordDialogComponent } from './shared/components/change-passwo
     HeaderComponent,
     ForgotPasswordComponent,
     ConfirmDialogComponent,
-    ChangePasswordDialogComponent
+    ChangePasswordDialogComponent,
+    MyFavoritesComponent
   ],
   imports: [
     BrowserModule,

@@ -59,7 +59,7 @@ export class VideoListComponent implements OnInit {
         console.log("Videos Response:", response);
         this.pagedVideos = response.content;
         this.totalElement = response.totalElement;
-        this.totalPages = response.totalPages;
+        this.totalPages = response.TotalPages;
         this.currentPage = response.number;
         this.hasMoreVideos = this.currentPage < this.totalPages - 1;
         // this.data.data = this.pagedVideos;

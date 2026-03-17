@@ -82,7 +82,7 @@ export class UserListComponent implements OnInit {
       next: (response: any) => {
         this.paginatedUser = [...this.paginatedUser, ...response.content];
         this.currentPage = response.number;
-         this.totalPages = response.totalPages; 
+         this.totalPages = response.TotalPages; 
         this.hasMoreUsers = this.currentPage < this.totalPages - 1;
         this.loadingMore = false;
       },

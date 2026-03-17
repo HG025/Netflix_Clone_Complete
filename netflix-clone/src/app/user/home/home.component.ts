@@ -145,7 +145,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.filteredVideos = response.content;
         this.currentPage = response.number;
         this.totalElement = response.totalElement;
-        this.totalPages = response.totalPages;
+        this.totalPages = response.TotalPages;
         this.hasMoreVideos = this.currentPage < this.totalPages - 1;
         this.loading = false;
 
@@ -257,10 +257,5 @@ export class HomeComponent implements OnInit, OnDestroy {
   formatDuration(seconds: number | undefined): string {
     return this.utilityService.formatDuration(seconds);
   }
-
-
-
-
-
 
 }
