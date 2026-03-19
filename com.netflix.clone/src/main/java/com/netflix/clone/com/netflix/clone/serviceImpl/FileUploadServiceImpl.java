@@ -1,7 +1,6 @@
 package com.netflix.clone.com.netflix.clone.serviceImpl;
 
 import java.io.IOException;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -121,7 +120,7 @@ public class FileUploadServiceImpl implements FileUploadService{
               .contentType(MediaType.parseMediaType(contentType))
               .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + filename + "\"")
               .header(HttpHeaders.ACCEPT_RANGES, "bytes")
-              .header(HttpHeaders.CONTENT_RANGE, "bytes" + rangeStart + "-" + rangeEnd + "/" + fileLength)
+              .header(HttpHeaders.CONTENT_RANGE, "bytes " + rangeStart + "-" + rangeEnd + "/" + fileLength)
               .header(HttpHeaders.CONTENT_LENGTH, String.valueOf(contentLength))
               .body(rangeResource);
     }

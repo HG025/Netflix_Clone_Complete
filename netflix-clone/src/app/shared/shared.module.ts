@@ -25,10 +25,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ChangePasswordDialogComponent } from './components/change-password-dialog/change-password-dialog.component';
-import { A11yModule, CdkAriaLive } from '@angular/cdk/a11y';
 import { VideoPlayerComponent } from './components/video-player/video-player.component';
 
 

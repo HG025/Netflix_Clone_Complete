@@ -33,7 +33,7 @@ public class FileHandlerUtil {
         if(filename.endsWith(".ogg")) return "video/ogg";
         if(filename.endsWith(".mkv")) return "video/x-matroska";
         if(filename.endsWith(".mvi")) return "video/x-msvideo";
-        if(filename.endsWith(".nov")) return "video/quicktime";
+        if(filename.endsWith(".mov")) return "video/quicktime";
         if(filename.endsWith(".flv")) return "video/x-flv";
         if(filename.endsWith(".wnv")) return "video/x-ns-wnv";
         if(filename.endsWith(".n4v")) return "video/x-n4v";

@@ -60,6 +60,9 @@ export class VideoPlayerComponent implements OnInit, OnDestroy {
 
   private loadAuthenticatedVideo(): void {
     this.authenticatedVideoUrl = this.mediaService.getMediaUrl(this.video.src, 'video');
+    if (this.videoElement?.nativeElement) {
+      this.videoElement.nativeElement.load(); // force reload
+    }
   }
 
   private cleanup() {
@@ -203,6 +206,19 @@ export class VideoPlayerComponent implements OnInit, OnDestroy {
       this.isPlaying = false;
     }
   }
+  //   togglePlay() {
+  //   if (!this.videoElement?.nativeElement) return;
+
+  //   const video = this.videoElement.nativeElement;
+
+  //   if (video.paused) {
+  //     video.play().catch(() => {});
+  //     this.isPlaying = true;
+  //   } else {
+  //     video.pause();
+  //     this.isPlaying = false;
+  //   }
+  // }
 
   private pauseAllOtherVideos(currentVideo: HTMLVideoElement) {
     const allVideos = document.querySelectorAll('video');
